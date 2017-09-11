@@ -1,5 +1,7 @@
 <?xml version = "1.0"?>
-<class>  
+
+<class xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+xsi:schemaLocation="C:/Users/J.Mateus/Documents/UFC/6°Semestre/DSPersist/Listas/L03/src/main/resources/students.xsd">  
    <student rollno = "393">
       <firstname>Dinkar</firstname>    
       <lastname>Kad</lastname>
