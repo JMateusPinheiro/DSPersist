@@ -1,0 +1,33 @@
+package l03.controller;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintStream;
+
+import l03.classes.UtilsForTesting;
+import technology.tabula.Page;
+import technology.tabula.Table;
+import technology.tabula.extractors.BasicExtractionAlgorithm;
+import technology.tabula.writers.CSVWriter;
+
+public class TabulaController {
+
+	public static void main(String[] args) {
+		try {
+			Page page = UtilsForTesting.getAreaFromPage("src/teste/resources/indictb1h_14.pdf", 15,
+					205.0f, 120.0f, 622.82f, 459.9f);
+
+			BasicExtractionAlgorithm bea = new BasicExtractionAlgorithm();
+			Table table = bea.extract(page).get(0);
+
+			CSVWriter pp = new CSVWriter();
+
+			pp.write(new PrintStream("arquivo.csv"), table);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}}
+}
