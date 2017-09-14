@@ -1,0 +1,45 @@
+package l03.classes;
+
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+public class Dados {
+	List<Deputado> dados;
+	@JsonIgnore
+	List<links> links;
+	
+	public List<Deputado> getDados() {
+		return dados;
+	}
+
+	public void setDados(List<Deputado> dados) {
+		this.dados = dados;
+	}
+	
+	class links{
+		String rel;
+		String href;
+		public String getRel(){
+			return rel;
+		}
+		public void setRel(String rel){
+			this.rel = rel;
+		}
+		public String getHref(){
+			return href;
+		}
+		public void setHref(String href){
+			this.href = href;
+		}
+		
+	}
+
+	public List<links> getLinks() {
+		return links;
+	}
+
+	public void setLinks(List<links> links) {
+		this.links = links;
+	}
+}

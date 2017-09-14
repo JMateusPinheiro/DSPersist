@@ -18,7 +18,7 @@ public class TabulaController {
 		try {
 			PDDocument document = PDDocument.load(new File("./src/main/resources/653_DiárioOficialTabeladeRemuneração2012.pdf"));
 			oe = new ObjectExtractor(document);
-			Page page = oe.extract(15);//numero da pagina que vai extrair
+			Page page = oe.extract(15);
 
 			BasicExtractionAlgorithm bea = new BasicExtractionAlgorithm();
 			Table table = bea.extract(page.getArea(810.0f,0.0f,580.0f,310.0f)).get(0);

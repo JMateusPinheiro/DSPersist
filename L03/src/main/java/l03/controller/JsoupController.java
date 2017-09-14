@@ -41,7 +41,7 @@ public class JsoupController {
 			osw.close();
 			os.close();
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 	}
 }

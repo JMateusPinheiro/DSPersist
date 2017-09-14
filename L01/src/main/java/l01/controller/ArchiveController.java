@@ -19,7 +19,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import l01.Model.Contato;
+import l01.Model.Deputado;
 
 @Controller
 public class ArchiveController {
@@ -32,7 +32,7 @@ public class ArchiveController {
 	}
 
 	@PostMapping("CriarCSV")
-	public String CriarCSV(Contato contato) throws IOException{
+	public String CriarCSV(Deputado contato) throws IOException{
 		String ch = contato.getNome() + "," + contato.getEndereco() + "," + contato.getTelefone() + "," + contato.getEmail();
 		prop.load(new FileInputStream("config.properties"));
 		OutputStream os = new FileOutputStream(prop.getProperty("caminhoArquivo"));	
@@ -56,9 +56,9 @@ public class ArchiveController {
 		return "VerCSV";
 	}
 
-	public List<Contato> LerCSV() throws IOException{
-		List<Contato> listaContatos = new ArrayList<Contato>();
-		Contato contato = null;
+	public List<Deputado> LerCSV() throws IOException{
+		List<Deputado> listaContatos = new ArrayList<Deputado>();
+		Deputado contato = null;
 		prop.load(new FileInputStream("config.properties"));
 		InputStream is = new FileInputStream(prop.getProperty("caminhoArquivo"));
 		InputStreamReader isr = new InputStreamReader(is);
@@ -67,7 +67,7 @@ public class ArchiveController {
 		if((linha = br.readLine()) != null){ 
 			while((linha = br.readLine()) != null){
 				String [] Contatos = linha.split(",");
-				contato = new Contato();
+				contato = new Deputado();
 				contato.setNome(Contatos[0]);
 				contato.setEndereco(Contatos[1]);
 				contato.setTelefone(Contatos[2]);

@@ -1,0 +1,23 @@
+package l03.controller;
+
+import java.io.File;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import l03.classes.Dados;
+import l03.classes.Deputado;
+
+public class JsonController {
+
+	public static void main(String[] args) throws Exception {
+		List<Deputado> l = new ArrayList<Deputado>();
+		ObjectMapper mapper = new ObjectMapper();
+		Dados data = mapper.readValue(new URL("https://dadosabertos.camara.leg.br/api/v2/deputados?ordem=ASC&ordenarPor=nome"),Dados.class);
+		
+		mapper.writeValue(new File(homeDir + "/result.json"), l);
+	}
+
+}

@@ -1,0 +1,15 @@
+package l03.controller;
+
+public class JsonController {
+
+	public static void main(String[] args) throws Exception {
+		List<Contato> l = new ArrayList<Contato>();
+		l.add(new Contato(1, "João", "joao@gmail.com"));
+		l.add(new Contato(1, "Maria", "maria@gmail.com"));
+		l.add(new Contato(1, "José", "jose@gmail.com"));
+		ObjectMapper mapper = new ObjectMapper();
+		String homeDir = System.getProperty("user.home");
+		mapper.writeValue(new File(homeDir + "/result.json"), l);
+	}
+
+}
