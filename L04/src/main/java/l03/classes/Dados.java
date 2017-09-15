@@ -1,8 +1,12 @@
 package l03.classes;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Dados {
+public class Dados implements Serializable{
+	
+	private static final long serialVersionUID = 5740571625851096984L;
+	
 	List<Deputado> dados;
 	List<Links> links;
 	

@@ -3,11 +3,13 @@
  */
 package l03.classes;
 
+import java.io.Serializable;
+
 /**
  * @author J.Mateus
  *
  */
-public class Deputado {
+public class Deputado implements Serializable{
 	String id;
 	String uri;
 	String nome;

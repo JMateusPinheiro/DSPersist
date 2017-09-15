@@ -1,6 +1,0 @@
-package l03.classes;
-
-public class Dados {
-List<Deputados> dados;
-
-}

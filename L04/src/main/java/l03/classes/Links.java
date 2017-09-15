@@ -1,6 +1,8 @@
 package l03.classes;
 
-public class Links{
+import java.io.Serializable;
+
+public class Links implements Serializable{
 	
 	String rel;
 	String href;
