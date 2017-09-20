@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package l03.classes;
+
+/**
+ * @author J.Mateus
+ *
+ */
+public class Deputado {
+	String id;
+	String uri;
+	String nome;
+	String siglaP;
+	String uriP;
+	String siglaUF;
+	String idLigi;
+	String urlFoto;
+}

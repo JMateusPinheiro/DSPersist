@@ -1,0 +1,32 @@
+package l03.classes;
+
+import java.util.List;
+
+public class Dados {
+	List<Deputado> dados;
+	List<links> links;
+	
+	public List<Deputado> getDados() {
+		return dados;
+	}
+
+	public void setDados(List<Deputado> dados) {
+		this.dados = dados;
+	}
+	
+	class links{
+		String rel;
+		String href;
+		public void setRel(){
+			
+		}
+	}
+
+	public List<links> getLinks() {
+		return links;
+	}
+
+	public void setLinks(List<links> links) {
+		this.links = links;
+	}
+}

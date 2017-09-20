@@ -1,0 +1,67 @@
+/**
+ * 
+ */
+package l03.classes;
+
+/**
+ * @author J.Mateus
+ *
+ */
+public class Deputado {
+	String id;
+	String uri;
+	String nome;
+	String siglaPartido;
+	String uriPartido;
+	String siglaUf;
+	String idLegislatura;
+	String urlFoto;
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getUri() {
+		return uri;
+	}
+	public void setUri(String uri) {
+		this.uri = uri;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getSiglaP() {
+		return siglaPartido;
+	}
+	public void setSiglaP(String siglaP) {
+		this.siglaPartido = siglaP;
+	}
+	public String getUriP() {
+		return uriPartido;
+	}
+	public void setUriP(String uriP) {
+		this.uriPartido = uriP;
+	}
+	public String getSiglaUF() {
+		return siglaUf;
+	}
+	public void setSiglaUF(String siglaUF) {
+		this.siglaUf = siglaUF;
+	}
+	public String getIdLigi() {
+		return idLegislatura;
+	}
+	public void setIdLigi(String idLigi) {
+		this.idLegislatura = idLigi;
+	}
+	public String getUrlFoto() {
+		return urlFoto;
+	}
+	public void setUrlFoto(String urlFoto) {
+		this.urlFoto = urlFoto;
+	}
+}
