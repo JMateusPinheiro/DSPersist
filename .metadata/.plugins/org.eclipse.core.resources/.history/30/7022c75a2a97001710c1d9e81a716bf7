@@ -1,5 +1,0 @@
-#Sun Sep 10 16:46:11 GFT 2017
-caminhoJsoup=./src/main/resources/Produtos.csv
-caminhoXML=C\:/Users/J.Mateus/Downloads/lista-completa-servicos.xml
-caminhoSax=./src/main/resources/XML.csv
-caminhoValid=./src/main/resources/students.xml
