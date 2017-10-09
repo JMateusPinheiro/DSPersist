@@ -3,19 +3,32 @@ package br.model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.Cascade;
+
 @Entity
 public class Funcionario implements Serializable{
+	public Funcionario(String cpf, String matricula, String nome, String email, String telefone) {
+		this.cpf = cpf;
+		this.matricula = matricula;
+		this.nome = nome;
+		this.email = email;
+		this.telefone = telefone;
+	}
+	
+	public Funcionario(){}
+
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue
-	@Column(unique=true)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int id;
 	
 	@Column(unique=true)
@@ -30,7 +43,7 @@ public class Funcionario implements Serializable{
 	
 	String telefone;
 	
-	@OneToMany(mappedBy="func")
+	@OneToMany(mappedBy="func", targetEntity = Dependente.class, cascade = CascadeType.ALL)
 	private List<Dependente> depts; 
 		
 	public int getId() {
