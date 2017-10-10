@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import br.model.Dependente;
 import br.model.Funcionario;
@@ -140,5 +141,32 @@ public class JdbcDao implements DAO{
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
+	}
+
+	public void beginTransaction() {
+		// TODO Auto-generated method stub
+	}
+
+	public void commit() {
+		// TODO Auto-generated method stub
+	}
+
+	public void rollback() {
+		// TODO Auto-generated method stub
+	}
+
+	public void close() {
+		// TODO Auto-generated method stub
+	}
+
+	public List<Dependente> getDepenWithLetter(String a) {
+		return null;
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void getAllInfoAboutFuncs() {
+		// TODO Auto-generated method stub
+		
 	}
 }

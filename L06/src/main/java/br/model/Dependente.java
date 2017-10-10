@@ -9,8 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQuery(name="Dependente.getDepenWithLetter",query="SELECT d FROM Dependente d WHERE d.nome LIKE :letter")
 public class Dependente implements Serializable{
 	
 	public Dependente(String cpf, String nome, Funcionario func) {
@@ -57,6 +59,12 @@ public class Dependente implements Serializable{
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	public Funcionario getFunc() {
+		return func;
+	}
+	public void setFunc(Funcionario func) {
+		this.func = func;
 	}
 	
 	

@@ -1,5 +1,7 @@
 package br.DAO;
 
+import java.util.List;
+
 import br.model.Dependente;
 import br.model.Funcionario;
 
@@ -16,5 +18,16 @@ public interface DAO {
 	public Funcionario getFuncionario(int id);
 	
 	public Dependente getDependente(int id);
+	
+	public List<Dependente> getDepenWithLetter(String a);
+	
+	public void getAllInfoAboutFuncs();
+	
+	public void beginTransaction();
 
+	public void commit();
+
+	public void rollback();
+
+	public void close();
 }

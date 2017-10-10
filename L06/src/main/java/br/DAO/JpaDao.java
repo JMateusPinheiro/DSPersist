@@ -1,7 +1,13 @@
 package br.DAO;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.ParameterExpression;
+import javax.persistence.criteria.Root;
 
 import br.model.Dependente;
 import br.model.Funcionario;
@@ -12,7 +18,7 @@ public class JpaDao implements DAO {
 	EntityTransaction tx;
 
 	public JpaDao(){
-		JPAUtil.init("h2-unit");
+		JPAUtil.init("postgres-unit");
 		em = JPAUtil.getEntityManager();
 		tx = em.getTransaction();
 	}
@@ -43,6 +49,61 @@ public class JpaDao implements DAO {
 		return em.find(Dependente.class, id); 
 	}
 
+	public List<Dependente> getDepenWithLetter(String a){
+		//JPQL
+		List<Dependente> depts = em.createQuery("FROM Dependente WHERE nome LIKE :letter",Dependente.class)
+				.setParameter("letter", a + "%")
+				.getResultList();
+		
+		//Criteria
+//		CriteriaBuilder cb = em.getCriteriaBuilder();
+//		CriteriaQuery<Dependente> cq = cb.createQuery(Dependente.class);
+//		Root<Dependente> r = cq.from(Dependente.class);
+//		ParameterExpression<String> p = cb.parameter(String.class, "letter");
+//		List<Dependente> depts = em.createQuery(cq.where(cb.like(r.get("nome").as(String.class), p))).setParameter("letter", a + "%").getResultList();
+
+		//NamedQuery
+//		List<Dependente> depts = em.createNamedQuery("Dependente.getDepenWithLetter",Dependente.class)
+//				.setParameter("letter", a + "%")
+//				.getResultList();
+		
+		//Native SQL
+//		List<Dependente> depts = em.createNativeQuery("SELECT d FROM Dependente d WHERE d.nome LIKE :letter", Dependente.class)
+//				.setParameter("letter", a + "%")
+//				.getResultList();
+//		
+		return depts;
+	}
+
+	public void getAllInfoAboutFuncs(){
+		//JPQL
+//		List<Funcionario> funcs = em.createQuery("FROM Funcionario", Funcionario.class)
+//				.getResultList();
+
+		
+		//CRITERIA
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		CriteriaQuery<Funcionario> cq = cb.createQuery(Funcionario.class);
+		cq.from(Funcionario.class);
+		List<Funcionario> funcs = em.createQuery(cq).getResultList();
+		
+		//NAMED QUERY
+//		List<Funcionario> funcs = em.createNamedQuery("Funcionario.getAllInfoAboutFuncs",Funcionario.class).getResultList();
+		
+		//NATIVE QUERY
+//		List<Funcionario> funcs = em.createNativeQuery("SELECT f FROM Funcionario f",Funcionario.class).getResultList();
+		
+		for(Funcionario func : funcs){
+			System.out.println(func.getId() + "--"  
+					+ func.getCpf() + "--"  
+					+ func.getMatricula() + "--"  
+					+ func.getNome() + "--"  
+					+ func.getEmail() + "--"  
+					+ func.getTelefone());
+		}
+
+	}
+	
 	public void beginTransaction() {
 		JPAUtil.beginTransaction();
 	}
