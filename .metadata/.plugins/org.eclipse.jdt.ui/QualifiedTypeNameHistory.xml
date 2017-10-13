@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.text.ParseException"/>
 <fullyQualifiedTypeName name="technology.tabula.writers.Writer"/>
 <fullyQualifiedTypeName name="org.apache.commons.cli.CommandLine"/>
 <fullyQualifiedTypeName name="org.apache.coyote.http11.OutputFilter"/>
@@ -35,7 +34,6 @@
 <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
 <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
 <fullyQualifiedTypeName name="javax.persistence.Column"/>
-<fullyQualifiedTypeName name="br.DAO.JdbcDao"/>
 <fullyQualifiedTypeName name="javax.persistence.SequenceGenerator"/>
 <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="javax.persistence.criteria.CriteriaQuery"/>
 <fullyQualifiedTypeName name="javax.persistence.NamedQuery"/>
 <fullyQualifiedTypeName name="br.model.Funcionario"/>
+<fullyQualifiedTypeName name="com.mchange.v2.c3p0.ComboPooledDataSource"/>
+<fullyQualifiedTypeName name="br.DAO.JdbcDao"/>
 </qualifiedTypeNameHistroy>

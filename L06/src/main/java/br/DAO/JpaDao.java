@@ -60,7 +60,9 @@ public class JpaDao implements DAO {
 //		CriteriaQuery<Dependente> cq = cb.createQuery(Dependente.class);
 //		Root<Dependente> r = cq.from(Dependente.class);
 //		ParameterExpression<String> p = cb.parameter(String.class, "letter");
-//		List<Dependente> depts = em.createQuery(cq.where(cb.like(r.get("nome").as(String.class), p))).setParameter("letter", a + "%").getResultList();
+//		List<Dependente> depts = em.createQuery(cq.where(cb.like(r.get("nome").as(String.class), p)))
+//				.setParameter("letter", a + "%")
+//				.getResultList();
 
 		//NamedQuery
 //		List<Dependente> depts = em.createNamedQuery("Dependente.getDepenWithLetter",Dependente.class)
@@ -68,7 +70,7 @@ public class JpaDao implements DAO {
 //				.getResultList();
 		
 		//Native SQL
-//		List<Dependente> depts = em.createNativeQuery("SELECT d FROM Dependente d WHERE d.nome LIKE :letter", Dependente.class)
+//		List<Dependente> depts = em.createNativeQuery("SELECT * FROM Dependente as d WHERE d.nome LIKE :letter", Dependente.class)
 //				.setParameter("letter", a + "%")
 //				.getResultList();
 //		
@@ -82,16 +84,16 @@ public class JpaDao implements DAO {
 
 		
 		//CRITERIA
-		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<Funcionario> cq = cb.createQuery(Funcionario.class);
-		cq.from(Funcionario.class);
-		List<Funcionario> funcs = em.createQuery(cq).getResultList();
+//		CriteriaBuilder cb = em.getCriteriaBuilder();
+//		CriteriaQuery<Funcionario> cq = cb.createQuery(Funcionario.class);
+//		cq.from(Funcionario.class);
+//		List<Funcionario> funcs = em.createQuery(cq).getResultList();
 		
 		//NAMED QUERY
 //		List<Funcionario> funcs = em.createNamedQuery("Funcionario.getAllInfoAboutFuncs",Funcionario.class).getResultList();
 		
 		//NATIVE QUERY
-//		List<Funcionario> funcs = em.createNativeQuery("SELECT f FROM Funcionario f",Funcionario.class).getResultList();
+		List<Funcionario> funcs = em.createNativeQuery("SELECT * FROM Funcionario",Funcionario.class).getResultList();
 		
 		for(Funcionario func : funcs){
 			System.out.println(func.getId() + "--"  
