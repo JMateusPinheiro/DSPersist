@@ -1,7 +1,10 @@
 package br.ui;
 
+import java.util.List;
+
 import br.DAO.DAO;
 import br.DAO.JpaDao;
+import br.model.Dependente;
 
 public class TesteClass {
 	
@@ -21,6 +24,9 @@ public class TesteClass {
 //			jpa.AddFunc("523", "523", "Jonata", "jonata@email.com", "899899989");
 //			jpa.AddDepen(1, "776", "Maria");
 //			jpa.AddDepen(2, "176", "Carla");
+//			jpa.AddDepen(2, "756", "Marlucia");
+//			jpa.AddDepen(3, "746", "Mariana");
+//			jpa.AddDepen(4, "786", "Marivalda");
 			
 //			jpa.AddDepen(3, "736", "Marta");
 //			jpa.RmFunc(1);
@@ -28,10 +34,10 @@ public class TesteClass {
 //			jdbc.AddDepen(1, "111", "Bruna");
 //			jdbc.RmFunc(1);
 			
-//			List<Dependente> depts = jpa.getDepenWithLetter("M");
-//			for(Dependente dept : depts){
-//				System.out.println("Dependente: " + dept.getNome().toString() + " --- Funcionario: " + (dept.getFunc().getNome().toString()));
-//			}
+			List<Dependente> depts = jpa.getDepenWithLetter("M");
+			for(Dependente dept : depts){
+				System.out.println("Dependente: " + dept.getNome().toString() + " --- Funcionario: " + (dept.getFunc().getNome().toString()));
+			}
 			
 //			jpa.getAllInfoAboutFuncs();
 			

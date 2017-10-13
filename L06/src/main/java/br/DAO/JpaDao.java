@@ -51,18 +51,19 @@ public class JpaDao implements DAO {
 
 	public List<Dependente> getDepenWithLetter(String a){
 		//JPQL
-		List<Dependente> depts = em.createQuery("FROM Dependente WHERE nome LIKE :letter",Dependente.class)
-				.setParameter("letter", a + "%")
-				.getResultList();
-		
-		//Criteria
-//		CriteriaBuilder cb = em.getCriteriaBuilder();
-//		CriteriaQuery<Dependente> cq = cb.createQuery(Dependente.class);
-//		Root<Dependente> r = cq.from(Dependente.class);
-//		ParameterExpression<String> p = cb.parameter(String.class, "letter");
-//		List<Dependente> depts = em.createQuery(cq.where(cb.like(r.get("nome").as(String.class), p)))
+//		List<Dependente> depts = em.createQuery("FROM Dependente WHERE nome LIKE :letter",Dependente.class)
 //				.setParameter("letter", a + "%")
 //				.getResultList();
+//		
+		//Criteria
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		CriteriaQuery<Dependente> cq = cb.createQuery(Dependente.class);
+		Root<Dependente> r = cq.from(Dependente.class);
+		r.fetch("func");
+		ParameterExpression<String> p = cb.parameter(String.class, "letter");
+		List<Dependente> depts = em.createQuery(cq.where(cb.like(r.get("nome").as(String.class), p)))
+				.setParameter("letter", a + "%")
+				.getResultList();
 
 		//NamedQuery
 //		List<Dependente> depts = em.createNamedQuery("Dependente.getDepenWithLetter",Dependente.class)
