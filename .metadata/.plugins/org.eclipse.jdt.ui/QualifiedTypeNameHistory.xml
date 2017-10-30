@@ -53,11 +53,11 @@
 <fullyQualifiedTypeName name="javax.persistence.criteria.Root"/>
 <fullyQualifiedTypeName name="javax.persistence.criteria.Path"/>
 <fullyQualifiedTypeName name="javax.persistence.Query"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="br.model.Dependente"/>
 <fullyQualifiedTypeName name="javax.persistence.criteria.CriteriaQuery"/>
 <fullyQualifiedTypeName name="javax.persistence.NamedQuery"/>
 <fullyQualifiedTypeName name="br.model.Funcionario"/>
 <fullyQualifiedTypeName name="com.mchange.v2.c3p0.ComboPooledDataSource"/>
 <fullyQualifiedTypeName name="br.DAO.JdbcDao"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

@@ -78,6 +78,7 @@ public class JpaDao implements DAO {
 		return depts;
 	}
 
+	@SuppressWarnings("unchecked")
 	public void getAllInfoAboutFuncs(){
 		//JPQL
 //		List<Funcionario> funcs = em.createQuery("FROM Funcionario", Funcionario.class)
