@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="l03.controller.TabulaController"/>
-<fullyQualifiedTypeName name="l03.classes.Deputado"/>
 <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIdentityReference"/>
 <fullyQualifiedTypeName name="java.net.URL"/>
 <fullyQualifiedTypeName name="com.fasterxml.jackson.core.type.TypeReference"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="com.mongodb.client.model.Projections"/>
 <fullyQualifiedTypeName name="redis.clients.jedis.Jedis"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="io.netty.handler.codec.ByteToMessageDecoder.Cumulator"/>
+<fullyQualifiedTypeName name="org.neo4j.driver.v1.types.Relationship"/>
 </qualifiedTypeNameHistroy>
